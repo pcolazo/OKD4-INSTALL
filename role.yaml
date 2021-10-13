@@ -1,0 +1,19 @@
+kind: Role
+apiVersion: rbac.authorization.k8s.io/v1
+metadata:
+  name: pipeline
+  namespace: openshift
+rules:
+  - verbs:
+      - create
+      - get
+      - list
+      - watch
+    apiGroups:
+      - ''
+      - template.openshift.io
+    resources:
+      - processedtemplates
+      - templateconfigs
+      - templateinstances
+      - templates
